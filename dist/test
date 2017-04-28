@@ -1,0 +1,3 @@
+        path: process.cwd(),
+        publicPath: '/ra-webpack-es6-dev/',
+        filename: join(PATHS.build,'bundle.js')
