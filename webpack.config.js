@@ -32,6 +32,10 @@ const PATHS = {
     fonts: join(__dirname, 'fonts'),
     build: join(__dirname,'dist')
 };
+<<<<<<< HEAD
+
+=======
+>>>>>>> eapostol/master
 console.log("***** DIRECTORY : \n" + __dirname);
 console.log("***** PATHS : \n");
 console.log(PATHS);
@@ -61,8 +65,14 @@ module.exports = {
         extensions: ['.js']
     },
     output: {
+<<<<<<< HEAD
+        path: PATHS.build,
+        filename: './dist/index.min.js',
+        path: resolve(__dirname, 'dist'),
+=======
         filename: 'index.min.js',
         path: resolve(__dirname,'dist'),
+>>>>>>> eapostol/master
         publicPath: "/js/"
 
     },
@@ -96,10 +106,15 @@ module.exports = {
         stats: 'errors-only',
         host: process.env.HOST,
         port: process.env.PORT
+<<<<<<< HEAD
+    },
+
+=======
     }
+>>>>>>> eapostol/master
 };
 
-/* 
+/*
 // host: is the IP address you wish to test against.
 // you have seen it as 0.0.0.0 or 127.0.0.1 as examples
 // here I use NODE, and it has an object called process
@@ -112,4 +127,3 @@ module.exports = {
 // performs the task.
 // the tech info is at - https://webpack.github.io/docs/hot-module-replacement.html
  */
-
