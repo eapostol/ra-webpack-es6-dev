@@ -32,15 +32,20 @@ const PATHS = {
     fonts: join(__dirname, 'fonts'),
     build: join(__dirname,'dist')
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> eapostol/master
 console.log("***** DIRECTORY : \n" + __dirname);
 console.log("***** PATHS : \n");
 console.log(PATHS);
 
+/*
 // Thus the PATHS constant above can help refer to your folders.
 // PATHS.src = your folder called "src" or "app"
 // PATHS.build = your folder called "build" or "dist"
 // etc.
+ */
 
 // module.exports configuration
 // in output: specify the URL directory path you use for browsing
@@ -49,11 +54,8 @@ console.log(PATHS);
 // devTool - see https://webpack.github.io/docs/configuration.html#devtool
 
 
-// process.cwd() is a node command, invoking a module
-/* refers to the directory in which server.js was executed,
- not the directory in which it lives.
- Effectively that means that server.js can never be run
- from outside of /path/to/nodejs-module so it can't be daemonized */
+// process.cwd() is a node command - returns the *** current working directory ***
+
 
 module.exports = {
     entry: {
@@ -63,23 +65,34 @@ module.exports = {
         extensions: ['.js']
     },
     output: {
+<<<<<<< HEAD
         path: PATHS.build,
         filename: './dist/index.min.js',
         path: resolve(__dirname, 'dist'),
+=======
+        filename: 'index.min.js',
+        path: resolve(__dirname,'dist'),
+>>>>>>> eapostol/master
         publicPath: "/js/"
 
     },
     module: {
-        loaders: [{
+        loaders: [
+            {
             test: /\.css$/,
             loaders: ['style', 'css'],
             include: PATHS.src
-        }, {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            include: PATHS.src,
-            exclude: ['./node_modules/','webpack.config.js']
-        }, {
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader?presets[]=es2015',
+                query: {
+                    presets: ['es2015']
+                },
+                include: PATHS.src,
+                exclude: ['./node_modules/','webpack.config.js']
+            },
+            {
             test: /\.(eot|svg|ttf|woff|woff2)$/,
             include : PATHS.fonts,
             loader: `file?name=/fonts/[name].[ext]`
@@ -93,8 +106,12 @@ module.exports = {
         stats: 'errors-only',
         host: process.env.HOST,
         port: process.env.PORT
+<<<<<<< HEAD
     },
 
+=======
+    }
+>>>>>>> eapostol/master
 };
 
 /*
