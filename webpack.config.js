@@ -86,7 +86,8 @@ module.exports = {
             test: /\.(eot|svg|ttf|woff|woff2)$/,
             include : PATHS.fonts,
             loader: `file?name=/fonts/[name].[ext]`
-        }]
+        }
+        ]
     },
     devtool: 'source-map',
     devServer: {
