@@ -3,8 +3,10 @@
  */
 
 export default class App {
-    constructor()
-    {
-        console.log("hello from App");
-    }
+  constructor()
+  {
+    console.log("hello from App");
+    console.log("butts!");
+    console.log("testttt");
+  }
 }

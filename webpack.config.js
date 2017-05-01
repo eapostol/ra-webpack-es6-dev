@@ -33,6 +33,8 @@ const PATHS = {
     build: join(__dirname,'dist')
 };
 
+console.log("***** DIRECTORY : \n" + __dirname);
+console.log("***** PATHS : \n");
 console.log(PATHS);
 
 // Thus the PATHS constant above can help refer to your folders.
@@ -62,7 +64,10 @@ module.exports = {
     },
     output: {
         path: PATHS.build,
-        filename: './dist/index.min.js'
+        filename: './dist/index.min.js',
+        path: resolve(__dirname, 'dist'),
+        publicPath: "/js/"
+
     },
     module: {
         loaders: [{
@@ -80,7 +85,7 @@ module.exports = {
             loader: `file?name=/fonts/[name].[ext]`
         }]
     },
-    devtool: debug ? "inline-source-map" : false,
+    devtool: 'source-map',
     devServer: {
         contentBase: process.cwd(),
         historyApiFallback: true,
@@ -89,12 +94,10 @@ module.exports = {
         host: process.env.HOST,
         port: process.env.PORT
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ]
+
 };
 
-/* 
+/*
 // host: is the IP address you wish to test against.
 // you have seen it as 0.0.0.0 or 127.0.0.1 as examples
 // here I use NODE, and it has an object called process
@@ -107,4 +110,3 @@ module.exports = {
 // performs the task.
 // the tech info is at - https://webpack.github.io/docs/hot-module-replacement.html
  */
-
