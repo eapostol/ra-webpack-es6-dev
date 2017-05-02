@@ -88,7 +88,6 @@ module.exports = {
         }
         ]
     },
-    devtool: 'source-map',
     devServer: {
         contentBase: process.cwd(),
         historyApiFallback: true,
@@ -112,4 +111,7 @@ module.exports = {
 // performs the task.
 // the tech info is at - https://webpack.github.io/docs/hot-module-replacement.html
  */
+/* removed source map setting because it seems to prevent the emitting of files
 
+ devtool: 'source-map',
+ */
