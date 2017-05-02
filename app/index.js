@@ -2,11 +2,15 @@
  * Created by Edward_J_Apostol on 2017-04-28.
  */
 
-require('file-loader?name=../dist/index.html!./index.html');
+// strange, this is how webpack currently works with sass to import stylesheets
+require('./main.scss');
+console.log("implemented sasser");
 
-console.log("this is a test... this isn't even ---loading");
-console.log("wtf");
+// this ensures that index.html is updated with webpack
+var indexer = require('file-loader?name=../dist/index.html!./index.html');
 
 import App from './App';
 
 let app = new App();
+console.log("hello");
+console.log(app);

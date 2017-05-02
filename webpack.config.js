@@ -18,6 +18,8 @@ const join = require('path').join;
 const resolve = require('path').resolve;
 const webpack = require('webpack');
 
+
+
 var debug = process.env.NODE_ENV !== "production";
 
 /*
@@ -64,14 +66,12 @@ module.exports = {
         filename: 'index.min.js',
         path: resolve(__dirname,'dist'),
         publicPath: "/js/"
-
     },
     module: {
         loaders: [
             {
-            test: /\.css$/,
-            loaders: ['style', 'css'],
-            include: PATHS.src
+                test: /\.(sass|scss)$/,
+                loaders: 'style-loader!css-loader!sass-loader'
             },
             {
                 test: /\.js$/,
@@ -86,7 +86,8 @@ module.exports = {
             test: /\.(eot|svg|ttf|woff|woff2)$/,
             include : PATHS.fonts,
             loader: `file?name=/fonts/[name].[ext]`
-        }]
+        }
+        ]
     },
     devtool: 'source-map',
     devServer: {
