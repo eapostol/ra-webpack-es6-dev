@@ -13,5 +13,5 @@ console.log("copied index.html");
 import App from './App';
 
 let app = new App();
-console.log("hello");
 console.log(app);
+console.log("reading index.js complete");
