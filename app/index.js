@@ -14,4 +14,4 @@ import App from './App';
 
 let app = new App();
 console.log(app);
-console.log("reading index.js complete");
+console.log("reading index.js complete...");
