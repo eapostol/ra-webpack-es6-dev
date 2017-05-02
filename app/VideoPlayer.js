@@ -1,11 +1,11 @@
 /**
  * Created by Edward_J_Apostol on 2017-05-01.
  */
-export default class VideoPlayer  {
+export default class VideoPlayer {
     constructor(videoFigureTag={},videoTag={},sourceTag={},getAllAnchors=[]){
         // note: do not add "extends Object" or "super"
         // when creating this custom object...
-        console.log("bite me");
+        // super();
         this.createPlayer();
         this.initLinks();
     }
